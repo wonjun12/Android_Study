@@ -7,6 +7,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -80,6 +81,14 @@ public class MainActivity extends AppCompatActivity {
                     ).show();
                     return;
                 }
+
+                // 이메일 저장하자.
+                // SharedPreference에 저장한다. (파일로 저장한다와 동일하다고 생각하면된다.)
+                SharedPreferences sp = getSharedPreferences("Register App", MODE_PRIVATE);
+                                                        //저장소 이름, 모드설정 (PRIVATE는 다른 앱에서 접근 불가)
+                SharedPreferences.Editor editer = sp.edit();
+                editer.putString("email", email); //key, value
+                editer.apply(); //적용완료
 
 
                 // TODO: 2023-07-10 아바타 선택하는 엑티비티를 띄운다.

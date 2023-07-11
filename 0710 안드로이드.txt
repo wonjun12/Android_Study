@@ -1,0 +1,28 @@
+홈 버튼 - 백 버튼의 차이가 존재한다.
+홈 : 엑티비티가 잠시 정지하고 다시 켰을때 마지막 확면을 다시 불러와야함.
+백 : 엑티비티를 종료한다.
+
+
+프레임워크를 이용해 개발하는 것은?
+ - 프레임워크 안에 있는  함수들을 언제 어떻게 쓰는지 정확하게 알고 있어야한다.
+
+onCreate() -> onStart() -> onResume() -> 화면 보여줌
+ 다른 엑티비티 누를시 - 이전 엑티비티 일시정지 onPause() -> onResume() -> 다른 엑티비티 실행
+엑티비티 종료 시 - onStop() -> onDestroy()
+
+
+== 홈버튼으로 인해 잠시 일시정지가 된 후 실행하면, onStart() -> onResume() 순서로 실행된다.
+== 백버튼으로 인해 종료가 된 후 실행하면, onCreate() -> onStart() -> onResume() 순서로 실행
+
+
+
+
+- 2번째 엑티비티 생성
+   - Launcher Activity 체크하면안됨 (이미 메인에서 체크를 했기에)
+   - 이름은 SecondActivity 라고 작성하자.
+
+== Main - Second 생성 및 과정 순서
+ - Main Create() -> Main Start() -> Main Resume() -> Main 출력 -> Second 호출 버튼 클릭 -> Main Pause() -> Second Create() -> Second Start() -> Second Resume() -> Second 출력 -> Main Stop()
+
+ == Second - Main 되돌아 가기
+ - Second Pause() -> Main Start() -> Main Resume() -> Main 출력 -> Second Stop() -> Second Destroy()

@@ -1,0 +1,67 @@
+안드로이드 설치
+ -> 다운 받고 설치하는데 좀 걸림 -> 설치를 기다리자 (전부 동의)(구글 보내지 않기)
+
+ - New Project
+   - No Activity
+     - 호환이 되는 버전 선택 (Java 선택) 만들기
+
+Android SDK
+ 
+SDK Build-tools 34
+Android SDK Command-line Tools(latest)
+Android Emulator
+Andriod SDK Platform Tools
+Google play Instant Development SDK
+
+- Gradle Scripts (라이브러리 사용 및 설치 공간)
+  - build.gradle(Project: DiceApp)
+  - build.gradle(Module : app)
+    -> 해당 2가지가 환경설정에 관련해서 설정하는부분
+
+- App
+  - manifests
+    - AndroidManifest.xml 
+       -> 앱의 아이콘 등 다양하게 설정할수 있는 공간
+  - Java
+    - 색이 칠해져있는 공간은 테스트 공간이다 (자동으로 만들어짐 건들 필요없음)
+    - 맨 위 공간을 사용하면 됨
+
+  - res (resources)
+    - drawable (그릴수 있는 것들 / 이미지)
+    - mipmap (아이콘 )
+    - values
+       - colors (색 관련)
+       - strings (텍스트 관련) = 문자열에 관한 것에 대한 모든것.
+               - 다른 언어로 새로 만들어 적용 시킬 수 있다. (google play의 옵션에 다양한 언어로 번역할 수 있다.)
+    - xml (??)
+  
+    - raw (폴더를 새로 만들었음
+     - 사운드 관련 폴더
+
+
+
+
+-- 안드로이드 개발은 뭘 하는 것이니?
+  - 보여줄 화면 개발 + 기능 로직 개발
+ => 개발 순서 -> 한화면에 화면개발 후 기능을 개발한 다음 다른 화면개발에 넘어가자
+   1. 화면개발 (XML)
+   2. 기능 로직 개발 (JAVA)
+       => 하나의 화면과 로직을 Activity (액티비티) 라고 한다.
+
+
+- 시작
+  - Empty Views Activity
+     - Acivity Name : main으로 돌아가는 로직 공간
+     - Layout Name : XML 개발을 위해 있는 공간
+
+
+  -> layout_main.xml (화면 구성 및 만들기)
+   -> match_parent (전체 크기를 말함)
+    
+ dp : 화면 구성할때의 단위 (안드로이드의 px)
+ sp : 글자의 크기를 나타낼때 단위
+
+
+-> 안드로이드는 화면 해상도가 여러가지가 있다.
+  -> 해상도에 따른 테스트가 많이 필요하다/
+

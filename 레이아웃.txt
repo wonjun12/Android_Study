@@ -1,0 +1,14 @@
+image
+  - scaleType : 사진의 크기가 보여줄 공간에 대해 조정하는 옵션
+  - gravity : 정렬
+
+
+- 년도 받기 : 안드로이드 calendar 현재 년도
+
+- ProgressBar 
+   - max : 최대 몇개로 나누어서 채우기 가능
+  - progress : 현재 몇개를 채울 것인지
+  - progressTint : 선의 색 변경
+
+
+- 멤버 변수, 로컬변수
