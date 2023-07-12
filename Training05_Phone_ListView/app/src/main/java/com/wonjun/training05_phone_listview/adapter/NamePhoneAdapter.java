@@ -95,9 +95,14 @@ public class NamePhoneAdapter extends RecyclerView.Adapter<NamePhoneAdapter.View
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        
+                        //여기서도 번호 가져오기 가능
+                        
                         // 해당 주소록 삭제
-                        namePhoneList.remove (selected);
-                        NamePhoneAdapter.super.notifyDataSetChanged();
+                        namePhoneList.remove (selected); //연결할 때 똑같은 메모리를 가지고 있기때문에
+                                                //여기서 삭제를 하면, 같은 메모리 상의 Main의 arrayList또한 삭제가 된다.
+                                                    //ArrayList에 new로 새로운 메모리를 만든것이 아니라 Main의 값 그대로 넣은것이기에 가능한것이다.
+                        notifyDataSetChanged();
                     }
                 });
 

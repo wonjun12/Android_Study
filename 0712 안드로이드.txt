@@ -1,0 +1,8 @@
+- 핸드폰에 SQLite3의 DB가 존재한다.
+   - SQLite3 : 경량 DB
+   - MySQL : 서버용 DB
+
+
+implements Serializable
+ - intent에 사용자 정의 Class 타입을 그냥 보내려고 하면 안된다.
+   - 해당 Class에 인터페이스를 상속받아서 보내면 1열로 데이터를 만들어 보내준다.
