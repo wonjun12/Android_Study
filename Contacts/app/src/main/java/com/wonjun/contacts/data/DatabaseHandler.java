@@ -97,13 +97,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     //업데이트 sql
-    public void updateContact(int id, String name, String phone){
+    public void updateContact(Contact contact){
         SQLiteDatabase db = getWritableDatabase();
 
         String query = "update contact " +
                 "set name = ?, phone = ? " +
                 "where id = ?";
-        String [] record = {name, phone, id+""};
+        String [] record = {contact.getName(), contact.getPhone(), contact.getId()+""};
 
         db.execSQL(query, record);
 

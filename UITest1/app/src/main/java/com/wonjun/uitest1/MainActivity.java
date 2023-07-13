@@ -3,11 +3,13 @@ package com.wonjun.uitest1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView textTitle;
+    EditText editName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

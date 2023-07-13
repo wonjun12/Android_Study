@@ -7,7 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.wonjun.contacts.data.DatabaseHandler;
 import com.wonjun.contacts.model.Contact;
 
@@ -17,6 +19,7 @@ public class UpdateActivity extends AppCompatActivity {
     EditText editPhone;
     Button btnSave;
 
+    Contact contact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +31,7 @@ public class UpdateActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.btnSave);
 
                 //시리얼라이즈를 받아오면 형변환을 해서 사용해야한다.
-        Contact contact = (Contact) getIntent().getSerializableExtra("contact");
-
-        int id = contact.getId();
+        contact = (Contact) getIntent().getSerializableExtra("contact");
 
         editName.setText(contact.getName());
         editPhone.setText(contact.getPhone());
@@ -42,8 +43,23 @@ public class UpdateActivity extends AppCompatActivity {
                 String name = editName.getText().toString().trim();
                 String phone = editPhone.getText().toString().trim();
 
+                if(name.isEmpty() || phone.isEmpty()){
+                    Snackbar.make(
+                            btnSave,
+                            "필수 항목 입력하세요.",
+                            Snackbar.LENGTH_SHORT
+                    ).show();
+
+                    return;
+                }
+
+                contact.setName(name);
+                contact.setPhone(phone);
+
                 DatabaseHandler handler = new DatabaseHandler(UpdateActivity.this, "contact_db", null, 1);
-                handler.updateContact(id, name, phone);
+                handler.updateContact(contact);
+
+                Toast.makeText(UpdateActivity.this, "수정 완료!!", Toast.LENGTH_SHORT).show();
 
                 finish();
             }
