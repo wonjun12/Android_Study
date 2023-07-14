@@ -1,0 +1,32 @@
+에뮬레이터를 이용해서 네트워크 통신을 하려면 몇가지 설정이 필요하다.
+  - 배포는 상관없지만, 보안상 막아뒀다고 한다.
+  - res/xml 폴더에, network_security_config.xml 파일을 만든다.
+ - <network-security-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">
+            *.typicode.com
+        </domain>
+    </domain-config>
+</network-security-config>
+    = .typicode.com로 오는 요청들을 전부 허용해라.
+
+
+  - 인터넷 권한에 대해 설정을 해줘야한다.
+    - AndroidManifest.xml 파일에 내용 을 추가하자.
+       - <uses-permission android:name="android.permission.INTERNET"/>
+     - INTERNEt의 권한을 추가한다. (안에는 여러가지 권한이 존재한다)
+       - 에뮬레이터 테스트와는 상관없이 무조건 있어야하는 권한 (나머지는 폰으로 한다고 하면 필요는 없다,)
+ 
+      -가장 상단에 내용 추가.
+       <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:tools="http://schemas.android.com/tools"
+         android:targetSandboxVersion="1">
+
+    - 가장 하단 application의 태그에 내용을 추가한다.
+      android:usesCleartextTraffic="true"
+      android:networkSecurityConfig="@xml/network_security_config"
+
+
+= 안드로이드 네트워크 라이브러리
+  - Volley
+  - Retrofit2

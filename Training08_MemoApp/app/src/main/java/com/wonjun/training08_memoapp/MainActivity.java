@@ -105,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
+            //유저가 텍스트 입력할 때마다 인식하는 함수 
+            //
             @Override
             public void afterTextChanged(Editable editable) {
                 String search = editSearch.getText().toString();
