@@ -4,6 +4,7 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                             {
                                 Member member = (Member) result.getData().getSerializableExtra("member");
                                 memberArrayList.add(0,member);
+                                adapter.notifyDataSetChanged();
                             }
                             break;
 
@@ -61,16 +65,11 @@ public class MainActivity extends AppCompatActivity {
                                 Member member = (Member) result.getData().getSerializableExtra("member");
 
                                 memberArrayList.set(index, member);
+                                adapter.notifyDataSetChanged();
                             }
 
                             break;
 
-                    }
-                    if ( result.getResultCode() == 22){
-
-
-                        /*adapter = new MemberAdapter(MainActivity.this, memberArrayList);
-                        recyclerView.setAdapter(adapter);*/
                     }
                 }
             });
@@ -79,6 +78,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // TODO: 2023-07-17  액션바 타이틀 변경 
+        getSupportActionBar().setTitle("직원쓰 리스트쓰");
+        // TODO: 2023-07-17  액션바 버튼만들기
+
 
         btnAdd = findViewById(R.id.btnAdd);
 
@@ -159,5 +163,38 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new MemberAdapter(MainActivity.this, memberArrayList);
         recyclerView.setAdapter(adapter);
+
+
+    }
+
+    // TODO: 2023-07-17 액션바를 사용하기 위해서는 함수를 만들어야함.
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //액션바에 메뉴가 나오도록 설정한다.
+        getMenuInflater().inflate(R.menu.main, menu);
+
+        return true;
+    }
+
+    // TODO: 2023-07-17 액셕바 아이템이 선택되었을때
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        //유저가 누른것이 + 아이콘인 경우, MemberAdd 실행
+        int itemId = item.getItemId();
+
+
+
+        if(itemId == R.id.menuAdd){
+            Intent intent = new Intent(MainActivity.this, MemberAdd.class);
+            launcher.launch(intent);
+        }else if(itemId == R.id.menuAbout){
+
+        }else if(itemId == R.id.menuShare){
+
+        }
+
+
+
+        return super.onOptionsItemSelected(item);
     }
 }

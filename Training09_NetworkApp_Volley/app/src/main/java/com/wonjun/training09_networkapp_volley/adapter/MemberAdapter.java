@@ -97,7 +97,10 @@ public class MemberAdapter extends  RecyclerView.Adapter<MemberAdapter.ViewHolde
                     intent.putExtra("index", index);
                     intent.putExtra("member", member);
 
-                    context.startActivity(intent);
+                    //context.startActivity(intent);
+                    // context자체는 Mainactivity인지 모른다.
+                    // 지정을 함으로써 사용할 수 있게 변환을 해주고, launcher를 실행시킨다.
+                    ((MainActivity) context).launcher.launch(intent);
                 }
             });
         }

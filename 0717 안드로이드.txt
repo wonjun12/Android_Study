@@ -1,0 +1,12 @@
+안드로이드 액션바 (Action Bar)
+  - 안드로이드 실행햇을때, 가장 상단에 있는 제목의 이름과 박스를 말한다.
+  - 액션바 버튼을 생성하기 위해 res-만들기 - resource 폴더 - menu
+    - 해당 menun폴더에서 파일을 생성하면되는데 Menu Resource File을 만든다.
+      - id, title, icon, showAsAction 필수로 하는게 좋다.
+         showAsAction : 보여줄 타입을 정함
+
+
+= RelativeLayout
+   - 레이아웃의 기준점을 만들어 고정적인 위치로 보낼수 있는 레이아웃
+
+= 로딩 화면 ProgressBar
