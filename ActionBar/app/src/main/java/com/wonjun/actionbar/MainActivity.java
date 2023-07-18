@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     PostingAdapter adapter;
     ArrayList<Posting> postingArrayList = new ArrayList<>();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,6 +115,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void startAddActivity(){
+//        Intent intent = new Intent(MainActivity.this, AddPost.class);
+//        startActivity(intent);
+        startAddActivity();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -124,8 +132,9 @@ public class MainActivity extends AppCompatActivity {
         int itemId = item.getItemId();
 
         if(itemId == R.id.menuAdd){
-            Intent intent = new Intent(MainActivity.this, AddPost.class);
-            startActivity(intent);
+//            Intent intent = new Intent(MainActivity.this, AddPost.class);
+//            startActivity(intent);
+            startAddActivity();
         }
 
 

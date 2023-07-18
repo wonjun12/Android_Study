@@ -1,0 +1,16 @@
+= android glide
+  - 이미지를 빠르게 처리해주는 오픈소스
+
+diskCacheStrategy(DiskCacheStrategy.DATA)
+  - 파일을 통한 캐시를 사용한다. (파일에 저장시킴)
+  - 캐시? => 한번 네트워크에서 파일을 불러오면 그 다음부터는 불러오지 않는다. ( 파일이 다르지 않다면)
+
+
+
+Intent(Intent.ACTION_PICK)
+  - 공개되어 잇는 액션들을 불러온다.
+  - 연결되어잇는 앱을 실행시켜주는 방법
+
+
+TextView - autolink 옵션
+  - 자동으로 링크를 걸어주는 옵션

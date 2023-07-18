@@ -16,6 +16,9 @@ public class AddPost extends AppCompatActivity {
     EditText editBody;
     Button btnSave;
 
+    //값을 보낼때 상수로 변환해서 보내자.
+    public static final int RESULT_ADDACTIVITY_SAVE = 100;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,8 @@ public class AddPost extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+
+                setResult(RESULT_ADDACTIVITY_SAVE);
             }
         });
     }
