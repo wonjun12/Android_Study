@@ -21,22 +21,22 @@ public class MainActivity extends AppCompatActivity {
     EditText editName;
     EditText editAge;
 
-    // 양방향 데이터 교환 액티비티 실행 => ActivityResultLauncher
-    ActivityResultLauncher<Intent> launcher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    //데이터를 받아오는 코드는 여기에 작성.
-                    Log.i("LIFE MAIN", "여기 리절트 나옴?" + result.getResultCode());
-                    if ( result.getResultCode() == 22){
+// 양방향 데이터 교환 액티비티 실행 => ActivityResultLauncher
+ActivityResultLauncher<Intent> launcher = registerForActivityResult(
+    new ActivityResultContracts.StartActivityForResult(),
+    new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+            //데이터를 받아오는 코드는 여기에 작성.
+            Log.i("LIFE MAIN", "여기 리절트 나옴?" + result.getResultCode());
+            if ( result.getResultCode() == 22){
 
-                         int futureAge = result.getData().getIntExtra("data", 0);
+                 int futureAge = result.getData().getIntExtra("data", 0);
 
-                         txtResult.setText("미래의 나이는 " + futureAge);
-                    }
-                }
-            });
+                 txtResult.setText("미래의 나이는 " + futureAge);
+            }
+        }
+    });
     TextView txtResult;
 
     //필수
@@ -64,22 +64,22 @@ public class MainActivity extends AppCompatActivity {
                 int age = Integer.parseInt(strAge);
 
 
-                // 두번째 액티비티를 실행시키고 싶다.
-                    //해당 엑티비티가 다른 액티비티를 실행시킨다의미로 파라미터를 설정해줘야한다.
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class); //Intent 객체 생성
-                                                                            // 객체로 생성해 메모리에 올리라는 뜻
-                                                                            // 메모리에 생성한 적이 없기때문에 this를 사용할 수 가 없다.
-                // 데이터를 전달하기 위해 Intent에 담아주자.
-                intent.putExtra("name", name); //key : value로 저장됨
-                intent.putExtra("age", age);
+// 두번째 액티비티를 실행시키고 싶다.
+    //해당 엑티비티가 다른 액티비티를 실행시킨다의미로 파라미터를 설정해줘야한다.
+Intent intent = new Intent(MainActivity.this, SecondActivity.class); //Intent 객체 생성
+                                                            // 객체로 생성해 메모리에 올리라는 뜻
+                                                            // 메모리에 생성한 적이 없기때문에 this를 사용할 수 가 없다.
+// 데이터를 전달하기 위해 Intent에 담아주자.
+intent.putExtra("name", name); //key : value로 저장됨
+intent.putExtra("age", age);
 
 
-                // 단방향 데이터 전달 액티비티 실행
-                //startActivity(intent);
+// 단방향 데이터 전달 액티비티 실행
+//startActivity(intent);
 
-                // 양방향 데이터 교환 액티비티 실행 => ActivityResultLauncher
+// 양방향 데이터 교환 액티비티 실행 => ActivityResultLauncher
 
-                launcher.launch(intent); // 실행
+launcher.launch(intent); // 실행
             }
         });
     }

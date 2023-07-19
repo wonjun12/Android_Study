@@ -102,6 +102,7 @@ public class YoutubeAdapter extends  RecyclerView.Adapter<YoutubeAdapter.ViewHol
             Uri uri = Uri.parse(url);
 
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            //intent.setPackage("com.google.android.youtube");
             context.startActivity(intent);
         }
     }
