@@ -182,9 +182,7 @@ public class MainActivity extends AppCompatActivity {
         //유저가 누른것이 + 아이콘인 경우, MemberAdd 실행
         int itemId = item.getItemId();
 
-
-
-        if(itemId == R.id.menuAdd){
+        if(itemId == R.id.menuAdd){ //선택된 액션바 id가 설정한 id와 동일할 경우.
             Intent intent = new Intent(MainActivity.this, MemberAdd.class);
             launcher.launch(intent);
         }else if(itemId == R.id.menuAbout){
@@ -192,8 +190,6 @@ public class MainActivity extends AppCompatActivity {
         }else if(itemId == R.id.menuShare){
 
         }
-
-
 
         return super.onOptionsItemSelected(item);
     }

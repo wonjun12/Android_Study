@@ -48,7 +48,7 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.ViewHolder> {/
         Memo memo = memoList.get(position);
 
         //자신이 만든 뷰홀더의 textView에 접근해서 텍스트를 변경하라.
-        holder.txtContent.setText(memo.content);
+        holder.txtContent.setText(memo.getContent());
     }
 
     @Override // 데이터의 갯수 함수 (행의 갯수)

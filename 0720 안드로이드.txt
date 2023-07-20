@@ -1,0 +1,23 @@
+== retrofit2 사용하기
+ - 설정
+   - build.gradle - dependencies에 설치할 라이브러리 추가
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+
+
+
+ - MemoApp
+  1. Main액티비티는 메모장 리스트를 보여줌.
+  2. 메모장 리스트에서 로그인이 안되어 있으면 로그인창으로 보내자.
+
+
+
+
+
+
+- layout_above
+   - 특정 레이아웃 위로 수정해라.
+
+- layout의 타이틀 및 text들을 직접 수정하면 좋지 않다.
+  - res/values/strings.xml 파일에 사용할 text 값들을 설정해서 하는것이 좋다.
