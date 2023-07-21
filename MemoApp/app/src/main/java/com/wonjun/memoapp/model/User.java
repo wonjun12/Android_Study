@@ -10,10 +10,17 @@ public class User {
     public User() {
     }
 
+    // 회원가입용 생성자
     public User(String email, String password, String nickname) {
         this.email = email;
         this.password = password;
         this.nickname = nickname;
+    }
+    
+    // 로그인용 생성자
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
     }
 
     public String getEmail() {

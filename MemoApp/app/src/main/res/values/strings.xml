@@ -2,4 +2,5 @@
     <string name="app_name">MemoApp</string>
     <string name="txt_login"><u>로그인</u></string>
     <string name="txt_registor">회원가입</string>
+    <string name="txt_to_registor"><u>회원가입</u></string>
 </resources>

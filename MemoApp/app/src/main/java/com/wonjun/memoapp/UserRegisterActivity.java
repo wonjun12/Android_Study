@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -132,6 +134,8 @@ public class UserRegisterActivity extends AppCompatActivity {
         txtToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(UserRegisterActivity.this, UserLoginActivity.class);
+                startActivity(intent);
 
                 finish();
             }
@@ -145,6 +149,7 @@ public class UserRegisterActivity extends AppCompatActivity {
     Dialog dialog;
     void showProgress(){
         dialog = new Dialog(this);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable((Color.TRANSPARENT)));
         dialog.setContentView(new ProgressBar(this));
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);

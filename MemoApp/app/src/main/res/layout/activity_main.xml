@@ -23,9 +23,10 @@
             android:textSize="24sp" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/btnAdd" >
+            android:layout_above="@id/btnAdd">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -34,7 +35,8 @@
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
+            android:layout_centerInParent="true"
+            tools:visibility="invisible" />
 
     </RelativeLayout>
 
