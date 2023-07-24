@@ -104,8 +104,6 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.ViewHolder>{
             imgDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    index = getAdapterPosition();
-
                     showAlertDialog();
                 }
             });
@@ -122,6 +120,8 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.ViewHolder>{
             builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
+                    index = getAdapterPosition();
+
                     Memo memo = memoArrayList.get(index);
 
                     SharedPreferences sp = context.getSharedPreferences(Config.PREFFERENCE_NAME, Context.MODE_PRIVATE);
