@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/fristFragment">
+
+    <fragment
+        android:id="@+id/fristFragment"
+        android:name="com.wonjun.tabbarbottomtabbar.FristFragment"
+        android:label="fragment_frist"
+        tools:layout="@layout/fragment_frist" />
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.wonjun.tabbarbottomtabbar.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.wonjun.tabbarbottomtabbar.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" />
+</navigation>

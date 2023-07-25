@@ -66,9 +66,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         btnPostAdd = findViewById(R.id.btnPostAdd);
 
-
-        getAllListPost();
-
         btnPostAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,10 +89,20 @@ public class MainActivity extends AppCompatActivity {
 
                 if(lastPosition + 1 == totalCount){ //스크롤을 데이터 맨 끝까지 한 상태이므로
                     //네트워크를 통해서 데이터를 추가로 받아오면 된다.
-                    getNetworkPost();
+
+                    if(count == limit){
+                        getNetworkPost();
+                    }
+
                 }
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getAllListPost();
     }
 
     protected void getAllListPost(){
@@ -122,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
                     // 페이징을 위해 count를 저장시킨
                     count = res.getCount();
+                    offset = offset + count;
 
                     postArrayList.addAll(res.getItems());
 
