@@ -1,0 +1,24 @@
+일부만 바뀌는 안드로이드 용어
+  - Fragment
+
+
+ - navigation 폴더 생성
+   - navigation Resource File 생성
+   - 핸드폰 모양 + 누른후 Create new destination 클릭
+    - 이름 지정하고 저장
+  - 필요하다면 여러개 만들어서 사용하면 된다.
+     - 만든 만큼의 필요한 화면이 생성된다. (한개의 액티비티 안에 여러개의 화면이 존재하도록 할 수 있음)
+
+  - 만든 Fragment를 Main의 NavHostFragment를 통해 보여주기때문에 Main에 생성해주자.
+
+  - 만들 아이콘과 버튼을 만들자.
+    - menu에서 만들어서 이동시켜야 한다.
+     - 필요한 item을 만든 후 Main의 buttonNavigationView에서 menu옵션으로 서로를 연결하자.
+
+
+  - 각각의 navigation의 실행 JAVA는 각각 존재한다.
+    - 우선 Main java에서 각각의 프래그먼트를 연결하자.
+
+
+
+  - Fragment는 화면 연결하는 코드는 onCreateView에서 작성한다.

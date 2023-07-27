@@ -1,0 +1,13 @@
+implementation 'com.google.android.gms:play-services-maps:18.1.0'
+
+
+
+local.properties
+  - git에 올라가지 않는 파일
+
+
+- 장소 검색
+  - Places SDK API
+
+https://readystory.tistory.com/199
+https://seunghyun.in/android/2/

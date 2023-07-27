@@ -25,7 +25,7 @@ public interface PostApi {
     @DELETE("/board/{postId}/like")
     Call<ResultRes> delListPost(@Header("Authorization") String token, @Path("postId") int postId);
 
-    @Multipart
+    @Multipart // form-data를 사용한다는
     @POST("/board")
     Call<ResultRes> addPost(@Header("Authorization") String token,
             @Part MultipartBody.Part photo, //파일을 보낼때 사용

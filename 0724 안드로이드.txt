@@ -1,0 +1,34 @@
+-- 안드로이드 카메라 사용하기
+  - 보안상으로 인해 사용하기 조금 까다롭다.
+
+1. manifests 내용 추가
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" /> 카메라가 꼭있는 기계에게만 허용
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> 카메라 이미지 읽기
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> 카메라 이미지 쓰기
+    <uses-permission android:name="android.permission.CAMERA"/> 카메라 권한
+
+
+  <application
+        android:requestRawExternalStorageAccess="true"
+
+2. xml/fileprovider 만들기
+
+3. manifests provider 내용 추가
+  - application 안에 내용을 추가한다.
+    <application>
+
+          <provider
+            android:authorities="com.wonjun.cameraapp.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/fileprovider" />
+        </provider>
+    </application>
+
+4. 
