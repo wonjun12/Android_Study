@@ -42,7 +42,5 @@ public class LocationViewActivity extends AppCompatActivity {
                 googleMap.addMarker(markerOptions).setTag(0);
             }
         });
-
-
     }
 }

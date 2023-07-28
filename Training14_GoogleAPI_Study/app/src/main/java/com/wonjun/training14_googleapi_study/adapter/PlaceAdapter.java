@@ -68,7 +68,6 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder>{
                     int index = getAdapterPosition();
 
                     Place place = placeArrayList.get(index);
-                    Log.i("LocationView 액티비티", "1");
 
                     Intent intent = new Intent(context, LocationViewActivity.class);
                     intent.putExtra("place", place);
